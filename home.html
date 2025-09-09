@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Mypage.css">
+    <title>M.H's Page</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a id="link-logo" class="logo">M.H's Page</a>
+            <!-- ハンバーガーここから -->
+            <!-- ハンバーガーアイコン -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- 表示・非表示されるメニュー -->
+            <div class="menu-box" id="menu">
+                <ul>
+                    <li><a id="link-home-menu">ホーム</a></li>
+                    <li><a id="link-intro-menu">自己紹介</a></li>
+                    <li class="menu-heading"><a id="link-projects-menu">制作物一覧</a></li>
+                    <li class="subitem"><a id="link-pj1-menu">自己紹介サイト</a></li>
+                    <li class="subitem"><a id="link-pj2-menu">相性カンニングシステム</a></li>
+                </ul>
+            </div>
+            <!-- ハンバーガーここまで -->
+        </header>
+
+        <nav id="top-nav">
+            <!-- トップ画像と犬とキャッチコピー -->
+            <div class="dogrun">
+                <div class="image-wrapper">
+                    <img src="images/townmap.png" class="top-image" alt="背景画像">
+                    <img src="images/R_dog.gif" class="doggif" alt="イッヌ">
+                </div>
+                <p class="top-message"><b>30代目前、憧れのプログラマーへ。</b></p>
+            </div>
+        </nav>
+
+        <main>
+
+            <!-- 自己紹介要約メッセージ-->
+
+            <section class="LMmessage">
+                <div class="intro-wrapper">
+                    <div class="h-intro-text">
+                        <p>IT運用から開発職へのキャリアチェンジを目指しています。</p>
+                        <p>
+                            <b>「技術を身につけ、価値ある人材になる」</b>──そんな思いで日々挑戦中です。
+                        </p>
+                    </div>
+                    <!-- 自己紹介ページへのリンクボタン -->
+                    <a id="link-intro-summary" class="intro-button">自己紹介を見る</a>
+                </div>
+            </section>
+
+            <!-- 制作物要約メッセージ -->
+            <section class="LMmessage">
+                <div class="intro-wrapper">
+                    <div class="h-intro-text">
+                        <p>学んだことを活かし、少しずつ形にしてきました。</p>
+                        <p>このページでは、制作物のこだわりや改善点などを紹介しています。</p>
+                    </div>
+                    <!-- 制作物要約ページへのリンクボタン -->
+                    <a id="link-projects-summary" class="intro-button">制作物を見る</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- フッターここから -->
+        <footer class="page-footer">
+            <p><b>M.H's Page</b></p>
+            <nav class="footer-links">
+                <a id="link-home-footer">ホーム</a>
+                <a id="link-intro-footer">自己紹介</a>
+                <section id="projects">
+                    <a id="link-projects-footer">制作物一覧</a>
+                    <div class="project-subitems">
+                        <small><a id="link-pj1-footer">自己紹介サイト</a></small><br>
+                        <small><a id="link-pj2-footer">相性カンニングシステム</a></small>
+                    </div>
+                </section>
+            </nav>
+        </footer>
+        <!-- フッターここまで -->
+    </div>
+    <script src="Mypage.js"></script>
+</body>
+</html>

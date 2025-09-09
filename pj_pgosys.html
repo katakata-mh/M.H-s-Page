@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Mypage.css">
+    <title>制作物｜『相性カンニングシステム』について</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <header>
+            <a id="link-logo" class="logo">M.H's Page</a>
+            <!-- ハンバーガーここから -->
+            <!-- ハンバーガーアイコン -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- 表示・非表示されるメニュー -->
+            <div class="menu-box" id="menu">
+                <ul>
+                    <li><a id="link-home-menu">ホーム</a></li>
+                    <li><a id="link-intro-menu">自己紹介</a></li>
+                    <li class="menu-heading"><a id="link-projects-menu">制作物一覧</a></li>
+                    <li class="subitem"><a id="link-pj1-menu">自己紹介サイト</a></li>
+                    <li class="subitem"><a id="link-pj2-menu">相性カンニングシステム</a></li>
+                </ul>
+            </div>
+            <!-- ハンバーガーここまで -->
+        </header>
+
+        <main id="self-introduction">
+            <div class="subintro-text">
+                <h2>制作物『バトル相性カンニングシステム』について</h2>
+                <p>
+                    3対3のモンスターバトルでタイプ相性を瞬時に確認できるWebシステムです。<br>
+                    これまでアナログなマグネット表を自作して相性を確認していましたが、不便に感じていました。<br>
+                    そこで、選択するたけで相性を確認できるような仕組みを目指してシステム化しました。<br>
+                    未経験だったStreamlitを活用し、公式ドキュメントやAIを活用しながら作成しました。
+                </p>
+                <p>
+                    使用言語：Python（Streamlit） / css / （JSON） <br>
+                    制作期間：8日間
+                </p>
+            </div>
+            <p>▼ 気になる項目をクリックしてご確認ください。</p>
+
+            <section class="accordion-section">
+                <h2>制作に関するQ&A</h2>
+
+                <!-- Q1 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 一番のこだわりポイントは？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. ユーザーの安心感を高めるローディング演出を導入しました</h3>
+                        <div class="answer-image">
+                            <img src="images/loading_m.png" alt="ローディングメッセージ画像">
+                        </div>
+                        <p>
+                            画像の読み込みに時間がかかるページでは処理中であることが分かりづらく、ユーザーが不安になる可能性がありました。<br>
+                            そこで、ローディングメッセージを表示することで「処理中であること」を明示し、ストレスを軽減する工夫を加えました。<br>
+                            当初はプログレスバーの導入も検討しましたが、実装上の制約があり断念してしまいました。<br>
+                            今後はより洗練された演出に改善していきたいと考えています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 二番目のこだわりポイントは？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. タイプ選択の視認性向上のためアイコン画像を導入したことです</h3>
+                        <div class="answer-image">
+                            <img src="images/type_iconl.png" alt="タイプアイコン一覧">
+                        </div>
+                        <p>
+                            直感的にタイプを選択・確認できるよう、モンスターのタイプをアイコン画像で表示する設計にしました。<br>
+                            視覚的な分かりやすさを重視したことで、初見ユーザーでも迷わず選択できるようになりました。<br>
+                            ただ、画像の読み込みが多くなることで処理の負荷が高まってしまいました。<br>
+                            現在も表示速度に課題が残っているため、今後は軽量化や遅延読み込みなどの改善を検討しています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 学習を深める上で工夫したことは？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. PythonのStreamlitを活用し、UI構築を通じて技術理解を深めました</h3>
+                        <div class="answer-image">
+                        </div>
+                        <p>
+                            WebシステムのUIを構築するにあたり、HTMLではなくPythonベースのStreamlitを選択しました。<br>
+                            理由は、学習中のPythonを活かしながら、コードベースでUI設計を行うことで技術理解を深められると考えたためです。<br>
+                            初めての使用でしたが、公式ドキュメントやAIのサポートを活用しながら試行錯誤を重ね、なんとか構築することができました。<br>
+                            まだ理解しきれていないところが多いため、もう一度一から作成し直したいと考えています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 反省している点は？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. 設計を十分に練らずに実装を始めてしまったことです</h3>
+                        <div class="answer-image">
+                        </div>
+                        <p>
+                            初期段階で「まずは動かしてみよう」と勢いでコードを書き始めた結果、後から処理の重複や構造の非効率に気づく場面が多くありました。<br>
+                            一部は共通化や整理を行いましたが、設計段階での検討不足が原因で、修正に時間がかかる箇所も残りました。<br>
+                            この経験を通じて、UIやロジックの設計を事前にしっかり考えることの重要性を実感しました。<br>
+                            次回は、機能や構造を明確にした上で実装に入ることで、より保守性の高いコードを目指したいと考えています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 苦労した点は？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. チーム保存機能の制限とエラー対応に苦労しました</h3>
+                        <div class="answer-image">
+                        </div>
+                        <p>
+                            複数のチームを保存・表示できる仕組みを目指して設計しましたが、3チーム目の表示時に必ずエラーが発生する問題に直面しました。<br>
+                            原因を特定するためにコードやデータ構造を見直し、Base64形式での保存方法にも着目しましたが、明確な解決には至らず、暫定的に保存上限を2チームに設定することで対応しました。<br>
+                            今後はデータの扱い方を改善し、より柔軟に保存できる仕組みを構築したいと考えています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 今後改善したいところは？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. ユーザー操作と機能面の両方に、さらなる改善の余地があります</h3>
+                        <div class="answer-image">
+                        </div>
+                        <p>
+                            ユーザー操作性と機能面の両方において、さらなる向上を目指しています。現状の課題を踏まえ、以下のような改善を検討中です<br>
+                            ・画像の描写速度が遅いため、軽量化や遅延読み込みなどの工夫で表示パフォーマンスを向上させたい<br>
+                            ・保存できるチーム数を2つに制限しているため、問題の原因を特定し、柔軟に保存・表示できるよう改善したい<br>
+                            ・画像や文字数によってレイアウトが崩れてしまうため、表示バランスを整えるUI調整を行いたい<br>
+                            ・「上部に戻る」ボタンの設置に挑戦したが未実装のため、再設計して導入したい<br>
+                            ・チーム作成時に「相性が悪いタイプ」の予測表示を追加し、戦略性を高めたい<br>
+                            ・チームの再編集機能を追加し、操作性と戦略の柔軟性を高めたい<br>
+                            ・現状は機能優先で構築したため、今後はデザイン性や操作感も含めて洗練させていきたい<br>
+                            これらの改善を通じて、より完成度の高いシステムへと進化させていきたいと考えています。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <!-- フッターここから -->
+        <footer class="page-footer">
+            <p><b>M.H's Page</b></p><br>
+            <nav class="footer-links">
+                <a id="link-home-footer">ホーム</a>
+                <a id="link-intro-footer">自己紹介</a>
+                <section id="projects">
+                    <a id="link-projects-footer">制作物一覧</a>
+                    <div class="project-subitems">
+                        <small><a id="link-pj1-footer">自己紹介サイト</a></small><br>
+                        <small><a id="link-pj2-footer">相性カンニングシステム</a></small>
+                    </div>
+                </section>
+            </nav>
+        </footer>
+        <!-- フッターここまで -->
+    </div>
+    <script src="Mypage.js"></script>
+</body>
+</html>

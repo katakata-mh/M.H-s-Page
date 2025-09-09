@@ -1,0 +1,562 @@
+@charset "utf-8";
+
+/* -------------------------------
+   全ページ共通処理
+-------------------------------- */
+
+body {
+    margin: 0; /* 上の隙間をなくす */
+    padding: 0; /* 上の隙間をなくす */
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll; /* 常に横のスクロールバーを表示 */
+}
+
+header {
+    height: 90px; /* 高さ調整 */
+    display: flex;
+    align-items: center; /* 縦の中央揃え */
+    box-sizing: border-box;
+    padding: 0; /* 余白 */
+    margin: 0; /* 上の隙間 */
+    background-color: #e5f2ff;
+}
+
+/* 左上のロゴ */
+.logo {
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+    margin-left: 25px;
+    text-decoration: none;
+}
+
+/* ▼ハンバーガーメニュー▼ */
+
+/* ハンバーガーメニュー全体のスタイル */
+.hamburger {
+    position: absolute; /* 親要素を基準に配置 */
+    right: 30px; /* 右から20pxの位置に配置 */
+    width: 50px; /* メニューの幅 */
+    height: 25px; /* メニューの高さ */
+    display: flex; /* 子要素を縦に並べる */
+    flex-direction: column; /* 縦方向に配置 */
+    justify-content: space-between; /* 均等に間隔を空ける */
+    cursor: pointer; /* マウスカーソルをポインターに */
+    z-index: 1000; /* 他の要素より前面に表示 */
+}
+
+    /* 三本線のスタイル */
+    .hamburger span {
+        display: block; /* ブロック要素として表示 */
+        height: 4px; /* 線の太さ */
+        background-color: #333; /* 線の色 */
+        border-radius: 2px; /* 丸み */
+    }
+
+/* クリック後のメニューボックス */
+.menu-box {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8); /* 最後が透明度（0〜1） */
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: none; /* 初期非表示 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.10);
+    z-index: 999;
+}
+
+    .menu-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-box li {
+        margin-left: 10px;
+        margin-bottom: 8px;
+    }
+
+    /* クリック後に表示されるメニュー（リンクの下線と色） */
+    .menu-box a {
+        text-decoration: none;
+        color: white;
+    }
+
+        /* クリック後に表示されるメニュー（滞在ページ無効） */
+        .menu-box a.disabled {
+            pointer-events: none; /* クリック無効化 */
+            opacity: 0.5; /* 半透明にして弱く見せる */
+            cursor: default; /* カーソルを通常の矢印に */
+            color: #999; /* 薄いグレーで「使えない感」アップ */
+            text-decoration: none; /* 下線を消してスッキリ */
+        }
+
+/* サブリンクだけ右にインデント */
+.subitem a {
+    padding-left: 20px;
+}
+/* ▲ハンバーガーメニュー▲ */
+
+/* 高さ調整（フッターの下を埋める） */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: #ccc; /* ← 好きな色で線を見せる */
+}
+
+/* ▼フッター▼ */
+.page-footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 1.1rem;
+    background-color: #e5f2ff;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* リンクの間隔 */
+    flex-wrap: wrap; /* 折り返す */
+}
+
+    .footer-links a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .footer-links a:hover {
+            color: #007acc;
+        }
+
+/* ▽制作物一覧内のリンク */
+.project-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    flex-wrap: wrap;
+}
+
+.project-title h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.project-subitems {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+    .project-subitems small {
+        display: block;
+        margin-bottom: 0px;
+    }
+
+    .project-subitems a:hover {
+        color: #005a99;
+    }
+
+/* 高さ調整（フッターの下を埋める） */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 画面の高さに満たないときでも全体を埋める */
+}
+/* ▲フッター▲ */
+
+
+/* -------------------------------
+   home.html
+-------------------------------- */
+
+/* トップ画像 */
+.dogrun {
+    margin-top: 3em; /* 上部隙間 */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 1em;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.top-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.doggif {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    transition: transform 1s ease;
+}
+
+.top-message {
+    margin-top: 1em; /* 画像との距離 */
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: black;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    text-align: center;
+    pointer-events: none;
+}
+
+/* ▽要約リンク文章▽ */
+.LMmessage {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff4ff;
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #333;
+    padding: 50px 25px;
+    align-items: stretch;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+    .LMmessage .intro-wrapper {
+        display: flex; /* 横並びにする */
+        align-items: center; /* 垂直方向の中央揃え */
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap; /* 折り返し許可 */
+    }
+
+.h-intro-text {
+    flex: 1; /* 文章広げる */
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+/* △要約リンク文章△ */
+
+/* ▽要約リンクボタン▽ */
+.intro-button {
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #6a5acd, #7f7fe0, #9a8fff, #bbaaff); /* 多色グラデーション */
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+    box-sizing: border-box;
+}
+
+    /* ボタンのふわふわ */
+    .intro-button:hover {
+        transform: translateY(-3px); /* ボタンが上に動く */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        background: linear-gradient(135deg, #5a4fcf, #6f6fd8, #8a80f0, #aaaaff); /* ホバー時に濃く変化 */
+    }
+/* △要約リンクボタン△ */
+
+
+/* -------------------------------
+	サブページ共通
+-------------------------------- */
+
+#self-introduction {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 24px;
+    text-align: center;
+}
+
+.subintro-text {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    position: relative;
+    z-index: 1;
+}
+
+    .subintro-text h2 {
+        text-align: center;
+        font-size: 1.6rem;
+        margin-bottom: 16px;
+    }
+
+    .subintro-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 12px;
+    }
+/* ▲サブページ共通▲ */
+
+
+/* -------------------------------
+  intro.html
+-------------------------------- */
+
+.link-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 32px 0;
+    flex-wrap: wrap;
+    margin-top: 0px;
+}
+
+    .link-buttons button {
+        background-color: rgba(0, 122, 204, 0.1);
+        border: 1px solid rgba(0, 122, 204, 0.3);
+        color: #007acc;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .link-buttons button:hover {
+            background-color: rgba(0, 122, 204, 0.2);
+        }
+
+.content-area {
+    min-height: 300px; /* 表示される内容の高さを確保 */
+    overflow: hidden;
+}
+
+.content-section {
+    display: none;
+    padding: 16px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease;
+    margin-top: 0px;
+}
+
+/* 文字のフェードイン */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-line {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+    .fade-line.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* 段落 */
+.compact-block {
+    word-break: break-word;
+}
+
+    .compact-block p {
+        line-height: 1;
+        min-height: 0px;
+    }
+
+/* -------------------------------
+   projjects.html
+-------------------------------- */
+
+.gallery {
+    display: grid; /* グリッドレイアウト */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /*最低、最大で残りスペースを均等に分ける(1fr) */
+    gap: 16px; /* グリッドの各アイテム間に隙間 */
+    margin-top: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item {
+    aspect-ratio: 4 / 3;
+    max-width: 400px;
+    display: flex; /* 子要素をFlexboxで */
+    flex-direction: column; /* 子要素を縦に */
+    justify-content: center;
+    position: relative; /* 子要素（overlayなど）を絶対配置できるようにする */
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+    height: 100%;
+    align-items: center; /* 子要素を横方向の中央に揃える */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* 下線などの装飾を消す */
+}
+
+.image-box {
+    position: relative; /* 子要素（overlayなど）を絶対配置 */
+    width: 100%; /* 親の幅に合わせて広げる */
+    max-width: 300px; /* 最大幅を制限（任意） */
+    aspect-ratio: 4 / 3; /* 横4：縦3の比率で枠を確保 */
+    object-fit: cover;
+    overflow: hidden;
+    display: flex; /* 中の画像やテキストを並べるためのFlexbox */
+    align-items: center; /* 子要素を縦方向の中央に揃える */
+    justify-content: center; /* 子要素を横方向の中央に揃える */
+
+    border: 1px solid #D3D3D3;
+    padding: 6px;
+    background-color: #f9f9f9;
+}
+
+    .image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        object-fit: cover;
+    }
+
+    .image-box:hover img {
+        filter: brightness(60%);
+    }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.image-box:hover .overlay {
+    opacity: 1;
+}
+
+.title {
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.caption {
+    color: black;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* -------------------------------
+   ▼pr_xxx.html共通▼
+-------------------------------- */
+
+/* 共通画像枠 */
+.answer-image {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+    .answer-image img {
+        max-width: 400px;
+        max-height: 300px;
+        object-fit: cover;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(1,1,1,1.1);
+    }
+
+/* アコーディオン */
+.accordion-toggle {
+    width: 100%;
+    text-align: left;
+    background-color: #e3f0ff;
+    padding: 1em;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+    border-bottom: 2px solid #c1e0ff;
+    font-weight: bold;
+}
+
+    .accordion-toggle:hover {
+        background-color: #E6E6FA;
+    }
+
+.accordion-item.active .accordion-toggle {
+    background-color: #E6E6FA;
+}
+
+    .accordion-item.active .accordion-toggle:hover {
+        background-color: #E6E6FA;
+    }
+
+.accordion-toggle .icon {
+    position: absolute;
+    right: 1em;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .icon {
+    transform: rotate(45deg); /* ＋を×に*/
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 1em;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 1em;
+}

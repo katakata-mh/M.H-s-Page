@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Mypage.css">
+    <title>制作物｜『M.H's Page』について</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <header>
+            <a id="link-logo" class="logo">M.H's Page</a>
+            <!-- ハンバーガーここから -->
+            <!-- ハンバーガーアイコン -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- 表示・非表示されるメニュー -->
+            <div class="menu-box" id="menu">
+                <ul>
+                    <li><a id="link-home-menu">ホーム</a></li>
+                    <li><a id="link-intro-menu">自己紹介</a></li>
+                    <li class="menu-heading"><a id="link-projects-menu">制作物一覧</a></li>
+                    <li class="subitem"><a id="link-pj1-menu">自己紹介サイト</a></li>
+                    <li class="subitem"><a id="link-pj2-menu">相性カンニングシステム</a></li>
+                </ul>
+            </div>
+            <!-- ハンバーガーここまで -->
+        </header>
+
+        <main id="self-introduction">
+            <div class="subintro-text">
+                <h2>制作物『M.H's Page』について</h2>
+                <p>
+                    このサイトは、自己紹介と制作物の紹介を目的として、Web制作の第一歩として取り組んだ作品です。<br>
+                    ホームページの作成は大学時代の授業の課題以来であったため、さまざまなページを参考にして作成しました。
+                </p>
+                <p>
+                    使用言語：HTML / CSS / JavaScript<br>
+                    制作期間：4日間
+                </p>
+            </div>
+            <p>▼ 気になる項目をクリックしてご確認ください。</p>
+
+            <section class="accordion-section">
+                <h2>制作に関するQ&A</h2>
+
+                <!-- Q1 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 一番のこだわりポイントは？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. トップページで犬を散歩できるようにしました</h3>
+                        <div class="answer-image">
+                            <img src="images/R_dog.gif" alt="歩く犬">
+                        </div>
+                        <p>
+                            ユーザーに楽しんでもらえる仕掛けを加えたいと思い、トップページに犬を飼いました。<br>
+                            町並みに見立てた背景画像の上で、犬がマウスの動きに合わせて追従する演出を実装しています。<br>
+                            さらに、操作がない状態では犬がランダムに歩き出すように設定し、静的なページに動きと親しみやすさを加えました。<br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 二番目のこだわりポイントは？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. 現在のページではリンクを無効化し、UX向上を図りました</h3>
+                        <div class="answer-image">
+                            <img src="images/linkoff.png" alt="リンクの無効">
+                        </div>
+                        <p>
+                            ハンバーガーメニューやフッターに各ページへのリンクを設置していますが、<br>
+                            現在表示中のページはリンクを無効化し、視覚的にもグレーアウトさせる工夫を加えました。<br>
+                            これにより、今どのページにいるかを直感的に把握でき、誤って同じページに再遷移してしまう操作ミスも防ぐことができます。
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- Q3 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 学習を深める上で工夫したことは？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. 表現技法を積極的に取り入れ、UI演出の幅を広げました</h3>
+                        <div class="answer-image">
+                        </div>
+                        <p>
+                            学習を深めるため、違和感なく自然に馴染む範囲でさまざまな表示技法を取り入れるよう工夫しました。<br>
+                            ・マウスに追従するアイコン演出<br>
+                            ・ハンバーガーメニューによる各ページへの遷移<br>
+                            ・ボタン操作で切り替わる自己紹介テーブル<br>
+                            ・文字のフェードイン<br>
+                            ・アコーディオン式のQ&A<br>
+                            「これ、いいな」と思った表現を実際に試してみることで、技術の引き出しが増えました。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 苦労した点は？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. レイアウト調整です</h3>
+                        <div class="answer-image">
+                        </div>
+                        <p>
+                            文字や画像をバランスよく配置し、画面サイズが変わってもレイアウトが崩れないようにすることに苦戦しました。<br>
+                            CSSのレイアウト手法には複数の選択肢があり、どれが最適なのか分からず悩むことも多くありました。<br>
+                            現在も一部の画面サイズでは表示が不安定な箇所があるため、引き続き見直しを進めていきたいと考えています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">
+                        Q. 今後改善したいところは？
+                        <span class="icon">＋</span>
+                    </button>
+                    <div class="accordion-content">
+                        <h3>A. 表現・操作性の両面で、さらなる改善を重ねていきたいと考えています</h3>
+                        <div class="answer-image">
+                        </div>
+                        <p>
+                            より完成度の高いページを目指して、以下の点を中心に改善を進めたいと考えています。<br>
+                            ・AI生成した犬アイコンの歩き方がやや不自然なため、より自然な動きに調整したい<br>
+                            ・犬がトップ画面の背景（道）に沿って歩くよう、座標制御とマップ構造の工夫を加えたい<br>
+                            ・画面サイズに左右されない安定したレイアウトを目指したい<br>
+                            ・「上部に戻る」ボタンを全ページに設置し、操作性と回遊性を向上させたい<br>
+                            今後も細部までこだわりながら、ユーザーにとって心地よく使えるページを目指して改善を重ねていきます。
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <!-- 必要に応じてQ&Aを追加 -->
+            </section>
+
+        </main>
+
+        <!-- フッターここから -->
+        <footer class="page-footer">
+            <p><b>M.H's Page</b></p><br>
+            <nav class="footer-links">
+                <a id="link-home-footer">ホーム</a>
+                <a id="link-intro-footer">自己紹介</a>
+                <section id="projects">
+                    <a id="link-projects-footer">制作物一覧</a>
+                    <div class="project-subitems">
+                        <small><a id="link-pj1-footer">自己紹介サイト</a></small><br>
+                        <small><a id="link-pj2-footer">相性カンニングシステム</a></small>
+                    </div>
+                </section>
+            </nav>
+        </footer>
+        <!-- フッターここまで -->
+    </div>
+    <script src="Mypage.js"></script>
+</body>
+</html>

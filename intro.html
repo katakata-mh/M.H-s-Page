@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Mypage.css">
+    <title>自己紹介</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a id="link-logo" class="logo">M.H's Page</a>
+            <!-- ハンバーガーここから -->
+            <!-- ハンバーガーアイコン -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- 表示・非表示されるメニュー -->
+            <div class="menu-box" id="menu">
+                <ul>
+                    <li><a id="link-home-menu">ホーム</a></li>
+                    <li><a id="link-intro-menu">自己紹介</a></li>
+                    <li class="menu-heading"><a id="link-projects-menu">制作物一覧</a></li>
+                    <li class="subitem"><a id="link-pj1-menu">自己紹介サイト</a></li>
+                    <li class="subitem"><a id="link-pj2-menu">相性カンニングシステム</a></li>
+                </ul>
+            </div>
+            <!-- ハンバーガーここまで -->
+        </header>
+
+        <main id="self-introduction">
+            <div class="subintro-text">
+                <h2>自己紹介</h2>
+                <p>
+                    はじめまして、M.Hと申します。<br>
+                    現在、IT運用の経験を活かしながら、開発職へのキャリアチェンジを目指して日々学習を重ねています。
+                </p>
+                <p>
+                    直近の目標：プログラマーとして、保守性・再利用性の高いコードを書けるようになること<br>
+                    未来の目標：AI技術を活用したシステム開発に携わり、社会やユーザーに価値を届けられるエンジニアになること
+                </p>
+            </div>
+            <p>▼ 気になる項目をクリックしてご確認ください。</p>
+
+
+            <div class="link-buttons">
+                <button data-section="university">大学時代</button>
+                <button data-section="trigger">これまでときっかけ</button>
+                <button data-section="current">現在</button>
+            </div>
+
+            <div class="content-area">
+                <div id="university" class="content-section">
+                    <p>文系の大学で、情報系やビジネスに関する幅広い分野を学びました。</p>
+                    <p>ホームページ制作やプログラミングの授業はパズルを解くような感覚で毎回楽しみにしていました。</p>
+                    <p>「自分で考えたものを形にできる面白さ」に惹かれ、プログラマーを目指すようになり、</p>
+                    <p>卒業制作では Java 言語を用いて、人生ゲームを開発しました。</p>
+
+                </div>
+                <div id="trigger" class="content-section">
+                    <p>これまでの職歴では、1社目・2社目ともに会社都合による配属で、主にIT運用業務に従事してきました。</p>
+                    <p>前職では経営不振の影響により、正社員登用の推薦が見送られるという悔しい経験もありました。</p>
+                    <br>
+                    <p>その出来事をきっかけに、自分に専門的な知識やスキルが不足していることに気がつき、</p>
+                    <p>「本当に必要とされる人材であれば、状況が厳しくても登用されていたのではないか」</p>
+                    <p>と自問するようになりました。</p>
+
+                </div>
+                <div id="current" class="content-section">
+                    <p>もっと専門性を高めたいという思いが強まり、大学時代から憧れていた“プログラマー”への挑戦を決意。</p>
+                    <p>現在は、東京都のキャリアチェンジ支援事業を活用し、プログラミングを学び直しています。</p>
+                    <p>前職は退職済みのため、社会人になって初めての“無職”という状況に不安もありますが、</p>
+                    <p>「技術を身につけ、価値ある人材になる」という目標に向かって、日々前向きに学習を重ねています。</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- フッターここから -->
+        <footer class="page-footer">
+            <p><b>M.H's Page</b></p><br>
+            <nav class="footer-links">
+                <a id="link-home-footer">ホーム</a>
+                <a id="link-intro-footer">自己紹介</a>
+                <section id="projects">
+                    <a id="link-projects-footer">制作物一覧</a>
+                    <div class="project-subitems">
+                        <small><a id="link-pj1-footer">自己紹介サイト</a></small><br>
+                        <small><a id="link-pj2-footer">相性カンニングシステム</a></small>
+                    </div>
+                </section>
+            </nav>
+        </footer>
+        <!-- フッターここまで -->
+    </div>
+    <script src="Mypage.js"></script>
+</body>
+</html>

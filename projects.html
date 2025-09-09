@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Mypage.css">
+    <title>制作物一覧</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <header>
+            <a id="link-logo" class="logo">M.H's Page</a>
+            <!-- ハンバーガーここから -->
+            <!-- ハンバーガーアイコン -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- 表示・非表示されるメニュー -->
+            <div class="menu-box" id="menu">
+                <ul>
+                    <li><a id="link-home-menu">ホーム</a></li>
+                    <li><a id="link-intro-menu">自己紹介</a></li>
+                    <li class="menu-heading"><a id="link-projects-menu">制作物一覧</a></li>
+                    <li class="subitem"><a id="link-pj1-menu">自己紹介サイト</a></li>
+                    <li class="subitem"><a id="link-pj2-menu">相性カンニングシステム</a></li>
+                </ul>
+            </div>
+            <!-- ハンバーガーここまで -->
+        </header>
+
+        <main id="self-introduction">
+            <div class="subintro-text">
+                <h2>制作物一覧</h2>
+                <p>
+                    これまでの学習を通じて試行錯誤しながら制作した成果物をまとめています。<br>
+                    それぞれの作品には、こだわったポイントや技術的な挑戦、苦労した点、そして今後の改善方針などを記載しています。
+                </p>
+                <p>学習言語：Java / HTML / CSS / C言語 / JavaScript / Python / VBA / XML</p>
+            </div>
+            <p>▼ 気になる項目をクリックしてご確認ください。</p>
+
+            <div class="gallery">
+                <a id="link-pro_pj1" class="item">
+                    <div class="image-box">
+                        <img src="images/HP.png" alt="プロジェクト1">
+                        <div class="overlay">
+                            <span class="title">『M.H's Page』</span>
+                        </div>
+                    </div>
+                    <span class="caption">ホームページ（本サイト）</span>
+                </a>
+
+                <a id="link-pro_pj2" class="item">
+                    <div class="image-box">
+                        <img src="images/pvpsystem.png" alt="プロジェクト2">
+                        <div class="overlay">
+                            <span class="title">バトル相性カンニングシステム</span>
+                        </div>
+                    </div>
+                    <span class="caption">タイプ相性評価システム</span>
+                </a>
+            </div>
+        </main>
+
+        <!-- フッターここから -->
+        <footer class="page-footer">
+            <p><b>M.H's Page</b></p><br>
+            <nav class="footer-links">
+                <a id="link-home-footer">ホーム</a>
+                <a id="link-intro-footer">自己紹介</a>
+                <section id="projects">
+                    <a id="link-projects-footer">制作物一覧</a>
+                    <div class="project-subitems">
+                        <small><a id="link-pj1-footer">自己紹介サイト</a></small><br>
+                        <small><a id="link-pj2-footer">相性カンニングシステム</a></small>
+                    </div>
+                </section>
+            </nav>
+        </footer>
+        <!-- フッターここまで -->
+    </div>
+    <script src="Mypage.js"></script>
+</body>
+</html>
