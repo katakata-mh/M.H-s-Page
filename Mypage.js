@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 -------------------------------- */
 function setupLinks() {
     const linkMap = {
-        "link-logo": "home.html",
-        "link-home-menu": "home.html",
+        "link-logo": "index.html",
+        "link-home-menu": "index.html",
         "link-intro-menu": "intro.html",
         "link-projects-menu": "projects.html",
         "link-pj1-menu": "pj_site.html",
@@ -25,7 +25,7 @@ function setupLinks() {
         "link-pro_pj2": "pj_pgosys.html",
         "link-intro-summary": "intro.html",
         "link-projects-summary": "projects.html",
-        "link-home-footer": "home.html",
+        "link-home-footer": "index.html",
         "link-intro-footer": "intro.html",
         "link-projects-footer": "projects.html",
         "link-pj1-footer": "pj_site.html",
@@ -211,4 +211,5 @@ function setupAccordion() {
             toggle.setAttribute('aria-expanded', String(!isOpen));
         });
     });
+
 }
